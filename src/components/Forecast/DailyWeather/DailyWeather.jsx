@@ -13,10 +13,6 @@ const DailyWeather = ({ data }) => {
     }
   }, [data]);
 
-  useEffect(() => {
-    console.log(weatherData)
-  }, [weatherData])
-
   const date = new Date();
   const displayDate = new Date();
   const indicesToShow = [0, 8, 16, 24, 32]
@@ -29,9 +25,7 @@ const DailyWeather = ({ data }) => {
 
       <div className='box'>
         {weatherData && indicesToShow.map((index) => {
-          console.log(index)
           const dailyData = weatherData[index];
-          console.log(dailyData)
           displayDate.setDate(date.getDate() + (index / 8));
           const formattedDate = displayDate.toDateString().replace(displayDate.getFullYear(), '');
 
