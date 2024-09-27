@@ -1,23 +1,36 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 
-// `http://api.openweathermap.org/geo/1.0/reverse?lat={lat}&lon={lon}&limit={limit}&appid={API key}`
+const CurrentLocation = ({ API_key }) => {
+  const [data, setData] = useState(null);
 
-const CurrentLocation = () => {
-    const API_key = process.env.REACT_APP_key4
-    const [currentlocation, setCurrentLocation] = useState("")
-    useEffect(() => {
-        navigator.geolocation.getCurrentPosition((pos) => {
-            const { latitude, longitude } = pos.coords;
-            // console.log(latitude,longitude);
-            const CurrentLocationAPI = `https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=1&appid=${API_key}`;
-            fetch(CurrentLocationAPI)
-                .then(res => res.json())
-                .then(data => setCurrentLocation(data[0].name));
-            // console.log(currentlocation);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`your-api-endpoint?apiKey=${API_key}`);
+        const result = await response.json();
+        setData(result);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
 
-        });
-    }, [])
-    return currentlocation
-}
+    fetchData();
+  }, [API_key]); // Add API_key to the dependency array
 
-export default CurrentLocation
+  if (!data) {
+    return <div>Loading...</div>;
+  }
+
+  return (
+    <div>
+      {data && data.length > 0 ? (
+        <div>{data[0].name}</div>
+      ) : (
+        <div>Data is not defined or empty</div>
+      )}
+    </div>
+  );
+};
+
+export default CurrentLocation;
+

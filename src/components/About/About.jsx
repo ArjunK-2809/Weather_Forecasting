@@ -13,116 +13,28 @@ const teamMembers = [
     mail: '112201024@smail.iitpkd.ac.in'
   },
   {
-    name: 'Team Member 2',
+    name: 'Pushti Vasoya',
     pos: 'Member',
-    img: require('./assets/team-member-2.jpg'),
-    github: 'https://github.com',
-    linkedIn: 'https://linkedin.com',
-    mail: 'yacc@iitpkd.ac.in' 
+    img: require('./assets/Pushti_Vasoya.jpg'),
+    github: 'https://github.com/PushtiVasoya',
+    linkedIn: 'https://www.linkedin.com/in/pushti-vasoya-05777a252/',
+    mail: '112201005@smail.iitpkd.ac.in' 
   },
   {
     name: 'Arjun K',
     pos: 'Member',
-    img: require('./assets/arjun.jpg'),
+    img: require('./assets/Arjun.jpg'),
     github: 'https://github.com/ArjunK-2809',
     linkedIn: 'https://www.linkedin.com/in/arjun-k-a003011b4/',
     mail: '122301004@smail.iitpkd.ac.in' 
   },
   {
-    name: 'Team Member 3',
+    name: 'Swadha Swaroop',
     pos: 'Member',
-    img: require('./assets/team-member-3.jpg'),
-    github: 'https://github.com',
-    linkedIn: 'https://linkedin.com',
-    mail: 'yacc@iitpkd.ac.in' 
-  },
-  {
-    name: 'Team Member 4',
-    pos: 'Member',
-    img: require('./assets/team-member-4.jpg'),
-    github: 'https://github.com',
-    linkedIn: 'https://linkedin.com',
-    mail: 'yacc@iitpkd.ac.in' 
-  },
-  {
-    name: 'Team Member 5',
-    pos: 'Member',
-    img: require('./assets/team-member-5.jpg'),
-    github: 'https://github.com',
-    linkedIn: 'https://linkedin.com',
-    mail: 'yacc@iitpkd.ac.in' 
-  },
-  {
-    name: 'Team Member 6',
-    pos: 'Member',
-    img: require('./assets/team-member-6.jpg'),
-    github: 'https://github.com',
-    linkedIn: 'https://linkedin.com',
-    mail: 'yacc@iitpkd.ac.in' 
-  },
-  {
-    name: 'Team Member 7',
-    pos: 'Member',
-    img: require('./assets/team-member-7.jpg'),
-    github: 'https://github.com',
-    linkedIn: 'https://linkedin.com',
-    mail: 'yacc@iitpkd.ac.in' 
-  },
-  {
-    name: 'Team Member 8',
-    pos: 'Member',
-    img: require('./assets/team-member-8.jpg'),
-    github: 'https://github.com',
-    linkedIn: 'https://linkedin.com',
-    mail: 'yacc@iitpkd.ac.in' 
-  },
-  {
-    name: 'Team Member 9',
-    pos: 'Member',
-    img: require('./assets/team-member-9.jpg'),
-    github: 'https://github.com',
-    linkedIn: 'https://linkedin.com',
-    mail: 'yacc@iitpkd.ac.in' 
-  },
-  {
-    name: 'Team Member 10',
-    pos: 'Member',
-    img: require('./assets/team-member-10.jpg'),
-    github: 'https://github.com',
-    linkedIn: 'https://linkedin.com',
-    mail: 'yacc@iitpkd.ac.in' 
-  },
-  {
-    name: 'Team Member 11',
-    pos: 'Member',
-    img: require('./assets/team-member-11.jpg'),
-    github: 'https://github.com',
-    linkedIn: 'https://linkedin.com',
-    mail: 'yacc@iitpkd.ac.in' 
-  },
-  {
-    name: 'Team Member 12',
-    pos: 'Member',
-    img: require('./assets/team-member-12.jpg'),
-    github: 'https://github.com',
-    linkedIn: 'https://linkedin.com',
-    mail: 'yacc@iitpkd.ac.in' 
-  },
-  {
-    name: 'Team Member 13',
-    pos: 'Member',
-    img: require('./assets/team-member-13.jpg'),
-    github: 'https://github.com',
-    linkedIn: 'https://linkedin.com',
-    mail: 'yacc@iitpkd.ac.in' 
-  },
-  {
-    name: 'Team Member 14',
-    pos: 'Member',
-    img: require('./assets/team-member-14.jpg'),
-    github: 'https://github.com',
-    linkedIn: 'https://linkedin.com',
-    mail: 'yacc@iitpkd.ac.in' 
+    img: require('./assets/swadha_swaroop.jpg'),
+    github: 'https://github.com/Rocky0204',
+    linkedIn: 'https://www.linkedin.com/in/swadha-swaroop-152377253',
+    mail: '112201009@smail.iitpkd.ac.in' 
   },
 ];
 
@@ -152,7 +64,7 @@ const About = () => {
               <h3 className="text-center">Website Developing Team</h3>
             </Col>
             <Col md={12}>
-              <div className="team-container">
+              <div className="team-container" style={{display:'flex', justifyContent:`${teamMembers.length < 7 ? 'center' : ''}`}}>
                 {teamMembers.map((member, id) => (
                   <Card key={id} className="team-card">
                     <Card.Img variant="top" src={member.img} className="team-img" />
